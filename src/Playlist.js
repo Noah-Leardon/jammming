@@ -3,9 +3,13 @@ import Tracklist from './Tracklist'
 
 function Playlist() {
     return (
-        <>
-            <h1>Test2</h1>
-        </>
+        <div className='playlist'>
+            <form> 
+                <input placeholder='Playlist name' />
+                <button type='submit'>Add Playlist</button>
+            </form>
+            <Tracklist />
+        </div>
     )
 }
 

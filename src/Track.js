@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
-function Track() {
+function Track(props) {
     return (
-        <>
-            <h1>Test4</h1>
-        </>
+        <div className='Track'>
+            <h2>{props.title}</h2>
+            <h4>{props.artist}</h4>
+            <p>{props.album}</p>
+        </div>
     )
 }
 
