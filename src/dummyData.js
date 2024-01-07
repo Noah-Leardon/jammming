@@ -1,7 +1,7 @@
 // Need Song name, Artist, Album
-// Song name = tracks.items[0].name
-// Artist = tracks.items[0].artists[0].name
-// Album = tracks.items[0].album.name
+// Song name = tracks.items[i].name
+// Artist = tracks.items[i].artists[0].name
+// Album = tracks.items[i].album.name
 
 const response = {
     "tracks": {
