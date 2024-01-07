@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Tracklist from './Tracklist'
 
 function Playlist(props) {
     function onClick(e) {
