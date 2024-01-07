@@ -39,7 +39,7 @@ function Results(props) {
                 <Tracklist onClick={onClick} tracks={populateResults()} />
             </div>
             <div className='Playlist'>
-                <Playlist addedSongs={playlistSongs} />
+                <Playlist setPlaylistSongs={setPlaylistSongs} playlistSongs={playlistSongs} />
             </div>
         </div>
     )

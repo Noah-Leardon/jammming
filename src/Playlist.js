@@ -2,18 +2,11 @@ import React, { useState, useEffect } from 'react'
 import Tracklist from './Tracklist'
 
 function Playlist(props) {
-    const results = []
-
-    const populateResults = () => {
-        console.log('Added Songs:', props.addedSongs);
-        return props.addedSongs.map((tracks, index) => (
-          <li key={index}>
-            {tracks.track}
-            <button>-</button>
-          </li>
-        ));
-      };
-      
+    function onClick(e) {
+        props.setPlaylistSongs((prev) => {
+            return prev.filter((item) => item.id !== e.id)
+        })
+    }
 
     return (
         <div className='playlist'>
@@ -22,7 +15,12 @@ function Playlist(props) {
                 <button type='submit'>Add Playlist</button>
             </form>
             <ul>
-                {populateResults()}
+                {props.playlistSongs.map((item) => (
+                    <li key={item.id}>
+                        {item.track}
+                        <button onClick={() => onClick(item)} id={item.id}>-</button>
+                    </li>
+                ))}   
             </ul>
         </div>
     )
