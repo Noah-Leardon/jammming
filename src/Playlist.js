@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
 
 function Playlist(props) {
+    const [playlistName, setPlaylistName] = useState("")
+
+    function handleChange(e) {
+        setPlaylistName(e.target.value)
+    }
+    
     function onClick(e) {
         props.setPlaylistSongs((prev) => {
             return prev.filter((item) => item.id !== e.id)
@@ -10,7 +16,7 @@ function Playlist(props) {
     return (
         <div className='playlist'>
             <form> 
-                <input placeholder='Playlist name' />
+                <input value={playlistName} onChange={handleChange} placeholder='Playlist name' />
                 <button type='submit'>Add Playlist</button>
             </form>
             <ul>
