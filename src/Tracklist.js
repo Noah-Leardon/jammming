@@ -7,7 +7,7 @@ function Tracklist(props) {
                 {props.tracks.map((item) => (
                     <li key={item.id}>
                         {item.track}
-                        <button onClick={() => props.onClick(item)} id={item.id}>+</button>
+                        <button onClick={() => props.onClick(item)} id={item.id}> + </button>
                     </li>
                 ))}   
             </ul>

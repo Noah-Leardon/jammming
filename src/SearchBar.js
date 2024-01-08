@@ -47,7 +47,10 @@ function SearchBar() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    if (search === "") {
+        alert("Please enter a track, artist, or album into the search bar!")
+        return 
+    }
     if (!accessToken) {
       // Redirect the user to authorizationUrl if access token is not present
       window.location.href = authorizationUrl;
@@ -59,7 +62,7 @@ function SearchBar() {
   }
 
   return (
-    <div>
+    <div className='app-container'>
       <div className='searchBar'>
         <form onSubmit={handleSubmit}>
           <input onChange={handleChange} value={search} placeholder='Find a track' />

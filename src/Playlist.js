@@ -82,25 +82,30 @@ function Playlist(props) {
 
     async function handleSubmit(e) {
         e.preventDefault()
+        if (playlistName === "") {
+            alert("Please enter a playlist name!")
+            return
+        } 
         for (let item of props.playlistSongs) {
             playlistUri.push(item.uri)
         }
         await createPlaylist()
         await addTracksToPlaylist(playlistUri)
         props.setPlaylistSongs([])
+        setPlaylistName("")
     }
 
     return (
         <div className='playlist'>
             <form onSubmit={handleSubmit}> 
                 <input value={playlistName} onChange={handleChange} placeholder='Playlist name' />
-                <button type='submit'>Add Playlist</button>
+                <button type='submit'>Create Playlist</button>
             </form>
             <ul>
                 {props.playlistSongs.map((item) => (
                     <li key={item.id}>
                         {item.track}
-                        <button onClick={() => onClick(item)} id={item.id}>-</button>
+                        <button onClick={() => onClick(item)} id={item.id}> - </button>
                     </li>
                 ))}   
             </ul>

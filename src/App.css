@@ -5,7 +5,6 @@ html {
 
 body {
   background-color: black;
-  color: white;
 }
 
 .App {
@@ -14,15 +13,117 @@ body {
   align-items: center;
 }
 
+.app-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-li {
-  color: white!;
+.searchBar {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .container {
   display: flex;
 }
+ul {
+  padding: 0px;
+  margin: 10px;
+}
+
+ul button {
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+}
 
 li {
   list-style: none;
+  color: black!;
+  padding: 10px;
+  font-size: 1rem;
+  border: black 2px solid;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+li h2 {
+  font-size: 1rem;
+  border-bottom: solid black;
+  margin-bottom: 0;
+}
+
+li h4 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+li p {
+  margin: 0.1rem;
+  font-size: 0.9rem;
+}
+
+input {
+  border: none;
+  padding: 0.4rem;
+}
+
+button {
+  padding: 0.4rem;
+  border: none;
+  background-color: white;
+}
+
+button:hover {
+  transition: all 0.3s;
+  background-color: lightgray;
+
+}
+
+.results, .playlist {
+  background-color: white;
+  border-radius: 20px;
+  overflow: scroll;
+  width: 20rem;
+  height: 45rem;
+  border: white solid;
+}
+
+.playlist {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 20px;
+}
+
+.playlist button {
+  margin-top: 5px;
+  background-color: black;
+  color: white;
+  width: 50%;
+}
+
+.playlist input {
+  background-color: white;
+  margin-right: 0px!;
+  text-align: center;
+  font-size: 1.2rem;
+  color: black;
+  border-radius: none!;
+  border-bottom: black solid;
+  width: 100%;
+}
+
+.playlist form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.playlist ul button {
+  background-color: black;
+  color: white;
+  padding: 5px 10px!;
 }
