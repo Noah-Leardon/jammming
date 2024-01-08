@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Track from './Track'
 import Tracklist from './Tracklist'
 import Playlist from './Playlist'
@@ -13,6 +13,7 @@ function Results(props) {
         for (let i = 0; i < response.tracks.items.length; i++) {
             results.push({
                 id: i,
+                uri: response.tracks.items[i].uri,
                 track: <Track
                     title={response.tracks.items[i].name}
                     artist={response.tracks.items[i].artists[0].name}
@@ -39,7 +40,7 @@ function Results(props) {
                 <Tracklist onClick={onClick} tracks={populateResults()} />
             </div>
             <div className='Playlist'>
-                <Playlist setPlaylistSongs={setPlaylistSongs} playlistSongs={playlistSongs} />
+                <Playlist accessToken={props.accessToken} setPlaylistSongs={setPlaylistSongs} playlistSongs={playlistSongs} />
             </div>
         </div>
     )
