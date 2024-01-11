@@ -97,7 +97,7 @@ button:hover {
   margin-left: 20px;
 }
 
-.playlist button {
+.playlist form button {
   margin-top: 5px;
   background-color: black;
   color: white;

@@ -8,7 +8,7 @@ function Playlist(props) {
     async function createPlaylist() {
         const userProfileUrl = 'https://api.spotify.com/v1/me';
 
-// Fetch user profile to get the user ID
+        // Fetch user profile to get the user ID
         const profileResponse = await fetch(userProfileUrl, {
             method: 'GET',
             headers: {
@@ -76,7 +76,7 @@ function Playlist(props) {
     
     function onClick(e) {
         props.setPlaylistSongs((prev) => {
-            return prev.filter((item) => item.id !== e.id)
+            return prev.filter((item) => item.uri !== e.uri)
         })
     }
 
@@ -103,9 +103,9 @@ function Playlist(props) {
             </form>
             <ul>
                 {props.playlistSongs.map((item) => (
-                    <li key={item.id}>
+                    <li key={item.uri}>
                         {item.track}
-                        <button onClick={() => onClick(item)} id={item.id}> - </button>
+                        <button onClick={() => onClick(item)} id={item.uri}> - </button>
                     </li>
                 ))}   
             </ul>

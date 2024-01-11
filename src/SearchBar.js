@@ -4,7 +4,7 @@ import Results from './Results';
 function SearchBar() {
   const [search, setSearch] = useState('');
   const [accessToken, setAccessToken] = useState(null);
-  const [response, setResponse] = useState(null); // Added state for response
+  const [response, setResponse] = useState(null);
 
   const clientId = '6b392af8f69a43be86c854c7a93c93c8';
   const redirectUri = 'http://localhost:3003';
@@ -38,10 +38,10 @@ function SearchBar() {
 
       const result = await response.json();
       console.log('GET request successful:', result);
-      setResponse(result); // Set the response in state
+      setResponse(result);
     } catch (error) {
       console.error('Error during GET request:', error);
-      setResponse(null); // Set response to null in case of an error
+      setResponse(null);
     }
   }
 
@@ -58,7 +58,6 @@ function SearchBar() {
     }
 
     await searchTrack();
-    // Response is now set in state, you can use it as needed
   }
 
   return (
@@ -69,7 +68,6 @@ function SearchBar() {
           <button type='submit'>Search</button>
         </form>
       </div>
-      {/* Display search results */}
       {response ? <Results accessToken={accessToken} response={response} /> : null}
     </div>
   );

@@ -27,7 +27,7 @@ function Results(props) {
 
     function onClick(e) {
         for (let i of playlistSongs) {
-            if (i.id === e.id) {
+            if (i.uri === e.uri) {
                 return
             }
         }
