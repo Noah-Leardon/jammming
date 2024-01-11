@@ -12,14 +12,20 @@ function SearchBar() {
   const authorizationUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&scope=playlist-modify-public%20playlist-modify-private&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&prompt=login`;
 
   useEffect(() => {
-    // Extract the access token from the URL fragment after the redirect
-    const urlParams = new URLSearchParams(window.location.hash.substring(1));
-    const newAccessToken = urlParams.get('access_token');
-
-    if (newAccessToken) {
-      setAccessToken(newAccessToken);
+    try {
+      // Extract the access token from the URL fragment after the redirect
+      const urlParams = new URLSearchParams(window.location.hash.substring(1));
+      const newAccessToken = urlParams.get('access_token');
+  
+      if (newAccessToken) {
+        setAccessToken(newAccessToken);
+      }
+    } catch (error) {
+      console.error('Error parsing URL fragment:', error);
+      // Handle the error, e.g., show an error message to the user
     }
   }, []);
+  
 
   function handleChange(e) {
     setSearch(e.target.value);
