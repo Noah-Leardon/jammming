@@ -14,7 +14,10 @@ function SearchBar() {
   useEffect(() => {
     try {
       // Extract the access token from the URL fragment after the redirect
-      const urlParams = new URLSearchParams(window.location.hash.substring(1));
+      const urlFragment = decodeURIComponent(window.location.hash.substring(1));
+      console.log(urlFragment)
+
+      const urlParams = new URLSearchParams(urlFragment);
       const newAccessToken = urlParams.get('access_token');
   
       if (newAccessToken) {
