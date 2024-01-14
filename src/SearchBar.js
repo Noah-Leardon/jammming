@@ -19,6 +19,7 @@ function SearchBar() {
 
       const urlParams = new URLSearchParams(urlFragment);
       const newAccessToken = urlParams.get('access_token');
+      console.log(`Access token: ${newAccessToken}`)
   
       if (newAccessToken) {
         setAccessToken(newAccessToken);
