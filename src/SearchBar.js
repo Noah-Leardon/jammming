@@ -7,7 +7,7 @@ function SearchBar() {
   const [response, setResponse] = useState(null);
 
   const clientId = '6b392af8f69a43be86c854c7a93c93c8';
-  const redirectUri = 'https://jammming-nl.netlify.app';
+  const redirectUri = 'https://jammming-nl.netlify.app/';
 
   const authorizationUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&scope=playlist-modify-public%20playlist-modify-private&redirect_uri=${redirectUri}&response_type=token&prompt=login`;
 
