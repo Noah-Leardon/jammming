@@ -21,7 +21,7 @@ h1 {
   color: white;
   font-size: 2.5rem;
   border-bottom: white solid;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
 }
 
 .app-container {
@@ -64,10 +64,21 @@ li {
   margin-bottom: 20px;
 }
 
+.track-container {
+  display: flex;
+  border-bottom: solid black;
+  align-items: center;
+}
+
 li h2 {
   font-size: 1rem;
-  border-bottom: solid black;
   margin-bottom: 0;
+}
+
+li img {
+  width: 60px;
+  position: static;
+  margin: 0.5rem;
 }
 
 li h4 {
@@ -101,8 +112,8 @@ button:hover {
   background-color: white;
   border-radius: 20px;
   overflow: scroll;
-  width: 20rem;
-  height: 45rem;
+  width: 25rem;
+  height: 40rem;
   border: white solid;
 }
 

@@ -18,6 +18,7 @@ function Results(props) {
                     title={response.tracks.items[i].name}
                     artist={response.tracks.items[i].artists[0].name}
                     album={response.tracks.items[i].album.name}
+                    art={response.tracks.items[i].album.images[0].url}
                     />
                 }
             );
